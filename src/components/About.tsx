@@ -1,105 +1,66 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { CheckCircle, Users, Award, Clock, Shield } from "lucide-react";
 
 const About = () => {
+  const stats = [
+    { icon: <Users className="h-8 w-8 text-primary" />, number: "500+", label: "Gig Harbor Homes Transformed" },
+    { icon: <Award className="h-8 w-8 text-primary" />, number: "20+", label: "Years Serving Gig Harbor" },
+    { icon: <Clock className="h-8 w-8 text-primary" />, number: "98%", label: "Customer Satisfaction" },
+    { icon: <Shield className="h-8 w-8 text-primary" />, number: "100%", label: "Licensed & Insured" },
+  ];
+
+  const features = [
+    "Local Gig Harbor expertise and knowledge",
+    "Licensed and fully insured professionals", 
+    "Transparent pricing with detailed estimates",
+    "High-quality materials and craftsmanship",
+    "Comprehensive project management",
+    "Clean and organized work environment"
+  ];
+
   return (
-    <section id="about" className="py-20 bg-background">
+    <section id="about" className="py-20 bg-muted/20">
       <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 text-foreground">
-              BLC Remodeling – Shaping the Future of Bellevue Homes
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+              Gig Harbor's Most Trusted Remodeling Contractor
             </h2>
-            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              At BLC Remodeling, we don't just renovate homes—we create living spaces that reflect your lifestyle, 
-              enhance your daily experience, and add lasting value to your Bellevue property. As a premier 
-              Bellevue remodeling contractor, we design solutions that seamlessly combine innovation, 
-              functionality, and timeless beauty.
+            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+              For over two decades, Above & Beyond Construction has been the premier choice for Gig Harbor home remodeling. Founded in 2003, our family-owned business has grown into Gig Harbor's most trusted name in kitchen remodeling, bathroom renovations, and comprehensive home improvements.
             </p>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-            <div>
-              <h3 className="text-3xl font-bold mb-6 text-primary">Our Vision: Making Homes Extraordinary</h3>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Our goal is simple: to make every Bellevue home renovation project extraordinary. From the initial 
-                consultation to the final walkthrough, you'll experience meticulous attention to detail, 
-                superior craftsmanship, and personalized service that sets us apart from other remodeling contractors.
-              </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                We believe the best home renovations are those that feel perfectly natural—spaces that flow 
-                seamlessly, function effortlessly, and inspire you every day. That's what we build.
-              </p>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <Card className="text-center p-6">
-                <CardContent className="pt-6">
-                  <div className="text-3xl font-bold text-primary mb-2">15+</div>
-                  <div className="text-sm text-muted-foreground">Years Experience</div>
-                </CardContent>
-              </Card>
-              <Card className="text-center p-6">
-                <CardContent className="pt-6">
-                  <div className="text-3xl font-bold text-primary mb-2">500+</div>
-                  <div className="text-sm text-muted-foreground">Projects Completed</div>
-                </CardContent>
-              </Card>
-              <Card className="text-center p-6">
-                <CardContent className="pt-6">
-                  <div className="text-3xl font-bold text-primary mb-2">100%</div>
-                  <div className="text-sm text-muted-foreground">Licensed & Insured</div>
-                </CardContent>
-              </Card>
-              <Card className="text-center p-6">
-                <CardContent className="pt-6">
-                  <div className="text-3xl font-bold text-primary mb-2">5⭐</div>
-                  <div className="text-sm text-muted-foreground">Customer Rating</div>
-                </CardContent>
-              </Card>
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              We understand that your home is more than just a building—it's where life happens. That's why every Gig Harbor kitchen remodeling project and bathroom renovation we undertake is approached with the same care and attention we'd give to our own family home.
+            </p>
+            
+            <div className="space-y-4 mb-8">
+              {features.map((feature, index) => (
+                <div key={index} className="flex items-center">
+                  <CheckCircle className="h-5 w-5 text-primary mr-3 flex-shrink-0" />
+                  <span className="text-muted-foreground">{feature}</span>
+                </div>
+              ))}
             </div>
           </div>
 
-          <div className="bg-secondary p-8 rounded-lg">
-            <h3 className="text-2xl font-bold mb-6 text-center text-foreground">
-              Why Choose BLC Remodeling for Your Bellevue Project?
-            </h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl text-white">🏗️</span>
-                </div>
-                <h4 className="font-semibold mb-2">Expert Craftsmanship</h4>
-                <p className="text-sm text-muted-foreground">
-                  Skilled artisans with decades of experience in luxury home renovations
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl text-white">📋</span>
-                </div>
-                <h4 className="font-semibold mb-2">Licensed & Insured</h4>
-                <p className="text-sm text-muted-foreground">
-                  Fully licensed contractor with comprehensive insurance protection
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl text-white">⏰</span>
-                </div>
-                <h4 className="font-semibold mb-2">On-Time Delivery</h4>
-                <p className="text-sm text-muted-foreground">
-                  Committed to completing projects on schedule and within budget
-                </p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl text-white">💎</span>
-                </div>
-                <h4 className="font-semibold mb-2">Premium Materials</h4>
-                <p className="text-sm text-muted-foreground">
-                  Only the finest materials and fixtures for lasting quality and beauty
-                </p>
-              </div>
-            </div>
+          <div className="grid grid-cols-2 gap-6">
+            {stats.map((stat, index) => (
+              <Card key={index} className="text-center p-6 hover:shadow-lg transition-all duration-300">
+                <CardContent className="p-0">
+                  <div className="mb-4 flex justify-center">
+                    <div className="p-3 bg-primary/10 rounded-full">
+                      {stat.icon}
+                    </div>
+                  </div>
+                  <div className="text-3xl font-bold text-foreground mb-2">
+                    {stat.number}
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    {stat.label}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </div>

@@ -1,71 +1,67 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import kitchenImage from "@/assets/kitchen-remodel.jpg";
-import bathroomImage from "@/assets/bathroom-remodel.jpg";
-import homeExterior from "@/assets/home-exterior.jpg";
+import { ChefHat, Bath, Home, Hammer, PaintBucket, Wrench } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Services = () => {
   const services = [
     {
-      title: "Bellevue Kitchen Remodeling",
-      description: "Complete kitchen transformations with custom cabinetry, premium countertops, and modern appliances. Our kitchen remodeling services combine functionality with stunning design to create the heart of your Bellevue home.",
-      image: kitchenImage,
-      features: ["Custom Cabinet Design", "Granite & Quartz Countertops", "Modern Appliance Installation", "Kitchen Island Design"]
+      icon: <ChefHat className="h-12 w-12 text-primary" />,
+      title: "Gig Harbor Kitchen Remodeling",
+      description: "Transform your kitchen into the heart of your home with our expert Gig Harbor kitchen remodeling services. Custom designs that maximize functionality while creating stunning visual appeal.",
+      features: ["Custom Cabinet Design", "Granite & Quartz Countertops", "Kitchen Island Construction", "Modern Appliance Integration"]
     },
     {
-      title: "Bellevue Bathroom Remodeling", 
-      description: "Luxury bathroom renovations featuring spa-like amenities, custom tile work, and modern fixtures. Transform your bathroom into a personal retreat with our expert bathroom remodeling services.",
-      image: bathroomImage,
-      features: ["Walk-in Shower Installation", "Custom Vanity Design", "Luxury Tile Work", "Modern Fixture Upgrades"]
+      icon: <Bath className="h-12 w-12 text-primary" />,
+      title: "Gig Harbor Bathroom Remodeling", 
+      description: "Create your personal spa retreat with our comprehensive Gig Harbor bathroom remodeling services. From powder rooms to master suites, we deliver luxurious results.",
+      features: ["Walk-in Shower Installation", "Soaking Tub Placement", "Vanity & Storage Solutions", "Heated Floor Systems"]
     },
     {
-      title: "Complete Home Renovation",
-      description: "Full-scale home renovations that reimagine your entire living space. From structural changes to finishing touches, we handle every aspect of your Bellevue home transformation project.",
-      image: homeExterior,
-      features: ["Structural Modifications", "Open Floor Plans", "Energy Efficiency Upgrades", "Exterior Renovations"]
+      icon: <Home className="h-12 w-12 text-primary" />,
+      title: "Whole Home Renovations",
+      description: "Complete home transformations that reimagine your entire living space. Our Gig Harbor remodeling contractors handle everything from structural changes to finishing touches.",
+      features: ["Open Floor Plan Conversions", "Room Additions", "Structural Modifications", "Smart Home Integration"]
     }
   ];
 
   return (
-    <section id="services" className="py-20 bg-secondary">
+    <section id="services" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-6 text-foreground">
-            Complete Solutions for Every Bellevue Home
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+            Expert Gig Harbor Home Remodeling Services
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            BLC Remodeling specializes in comprehensive home renovation services throughout Bellevue. 
-            Our expert team combines years of experience with innovative design solutions to deliver 
-            exceptional results that enhance both beauty and functionality.
+          <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            As Gig Harbor's trusted remodeling contractor, Above & Beyond Construction specializes in transforming homes throughout the greater Gig Harbor area. From stunning kitchen renovations to luxurious bathroom makeovers, we bring your vision to life with unmatched craftsmanship.
           </p>
         </div>
-        
-        <div className="grid md:grid-cols-3 gap-8">
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="h-64 overflow-hidden">
-                <img 
-                  src={service.image} 
-                  alt={service.title}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle className="text-xl font-bold text-primary">
+            <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/30">
+              <CardHeader className="text-center pb-4">
+                <div className="mx-auto mb-4 p-4 bg-primary/10 rounded-full group-hover:bg-primary/20 transition-colors">
+                  {service.icon}
+                </div>
+                <CardTitle className="text-2xl font-bold text-foreground mb-3">
                   {service.title}
                 </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base mb-4 leading-relaxed">
+                <CardDescription className="text-muted-foreground text-base leading-relaxed">
                   {service.description}
                 </CardDescription>
-                <ul className="space-y-2">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-sm text-muted-foreground">
-                      <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
-                      {feature}
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3 mb-6">
+                  {service.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-start text-sm text-muted-foreground">
+                      <div className="w-2 h-2 bg-primary rounded-full mr-3 flex-shrink-0 mt-2"></div>
+                      <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
+                <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-white transition-colors">
+                  Learn More
+                </Button>
               </CardContent>
             </Card>
           ))}
